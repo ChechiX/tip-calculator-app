@@ -1,44 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Tip calculator app</title>
 
-  Bill
+    <link rel="stylesheet" href="./styles.css" />
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+    <script defer src="./main.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>
+        <img src="./images/logo.svg" alt="Splitter Logo" />
+      </h1>
+    </header>
 
-  Number of People
+    <main class="container">
+      <div class="bill-section">
+        <div class="bill-group">
+          <label class="bill-group__label text-grey-500" for="bill">Bill</label>
 
-  Tip Amount
-  / person
+          <div class="bill-amount">
+            <img
+              class="bill-amount__icon"
+              src="./images/icon-dollar.svg"
+              alt="Dollar Icon"
+            />
 
-  Total
-  / person
+            <input
+              class="bill-amount__input"
+              type="number"
+              id="bill"
+              placeholder="0.00"
+              value="142.55"
+            />
+          </div>
+        </div>
 
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend text-grey-500">Select Tip %</legend>
+
+          <div class="tip-options">
+            <button class="tip-options__button">5%</button>
+
+            <button class="tip-options__button">10%</button>
+
+            <button class="tip-options__button tip-options__button--active">
+              15%
+            </button>
+
+            <button class="tip-options__button">25%</button>
+
+            <button class="tip-options__button">50%</button>
+
+            <input
+              class="tip-options__input"
+              type="number"
+              id="custom-tip"
+              placeholder="Custom"
+              min="0"
+              max="100"
+            />
+          </div>
+        </fieldset>
+
+        <div class="people-group">
+          <label class="people-group__label text-grey-500" for="people"
+            >Number of People</label
+          >
+
+          <div class="people-container">
+            <img
+              class="people-container__icon"
+              src="./images/icon-person.svg"
+              alt="Person Icon"
+            />
+
+            <input
+              class="people-container__input"
+              type="number"
+              id="people"
+              placeholder="0"
+              value="5"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="results-group">
+        <div class="results-group__container">
+          <div class="result">
+            <p class="result__title">Tip Amount <span>/ person</span></p>
+
+            <p class="result__value" id="tip-amount">$4.27</p>
+          </div>
+
+          <div class="result">
+            <p class="result__title">Total <span>/ person</span></p>
+
+            <p class="result__value" id="total-amount">$32.79</p>
+          </div>
+        </div>
+
+        <button class="results-group__reset-btn" id="reset-btn">Reset</button>
+      </div>
+    </main>
+
+    <footer class="attribution">
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Julio Anccasi</a>.
+      </p>
+    </footer>
+  </body>
 </html>
