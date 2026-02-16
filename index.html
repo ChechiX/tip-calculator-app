@@ -27,7 +27,9 @@
     <main class="container">
       <div class="bill-section">
         <div class="bill-group">
-          <label class="bill-group__label text-grey-500" for="bill">Bill</label>
+          <label class="bill-group__label text-grey-500" for="billInput"
+            >Bill</label
+          >
 
           <div class="bill-amount">
             <img
@@ -39,7 +41,7 @@
             <input
               class="bill-amount__input"
               type="number"
-              id="bill"
+              id="billInput"
               placeholder="0.00"
               value="142.55"
             />
@@ -49,7 +51,7 @@
         <fieldset class="fieldset">
           <legend class="fieldset__legend text-grey-500">Select Tip %</legend>
 
-          <div class="tip-options">
+          <div class="tip-options" id="tipOptions">
             <button class="tip-options__button">5%</button>
 
             <button class="tip-options__button">10%</button>
@@ -65,7 +67,7 @@
             <input
               class="tip-options__input"
               type="number"
-              id="custom-tip"
+              id="customTip"
               placeholder="Custom"
               min="0"
               max="100"
@@ -74,7 +76,7 @@
         </fieldset>
 
         <div class="people-group">
-          <label class="people-group__label text-grey-500" for="people"
+          <label class="people-group__label text-grey-500" for="peopleInput"
             >Number of People</label
           >
 
@@ -88,7 +90,7 @@
             <input
               class="people-container__input"
               type="number"
-              id="people"
+              id="peopleInput"
               placeholder="0"
               value="5"
             />
