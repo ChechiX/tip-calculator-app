@@ -42,8 +42,9 @@
               class="bill-amount__input"
               type="number"
               id="billInput"
-              placeholder="0.00"
+              placeholder="0"
               value="142.55"
+              min="0"
             />
           </div>
         </div>
@@ -76,9 +77,13 @@
         </fieldset>
 
         <div class="people-group">
-          <label class="people-group__label text-grey-500" for="peopleInput"
-            >Number of People</label
-          >
+          <div class="people-group__text">
+            <label class="people-group__label text-grey-500" for="peopleInput"
+              >Number of People</label
+            >
+
+            <p class="people-group__error" id="errorMessage">Can't be zero</p>
+          </div>
 
           <div class="people-container">
             <img
@@ -93,6 +98,7 @@
               id="peopleInput"
               placeholder="0"
               value="5"
+              min="0"
             />
           </div>
         </div>
@@ -103,17 +109,17 @@
           <div class="result">
             <p class="result__title">Tip Amount <span>/ person</span></p>
 
-            <p class="result__value" id="tip-amount">$4.27</p>
+            <p class="result__value" id="tipAmount">$4.28</p>
           </div>
 
           <div class="result">
             <p class="result__title">Total <span>/ person</span></p>
 
-            <p class="result__value" id="total-amount">$32.79</p>
+            <p class="result__value" id="totalAmount">$32.79</p>
           </div>
         </div>
 
-        <button class="results-group__reset-btn" id="reset-btn">Reset</button>
+        <button class="results-group__reset-btn" id="resetBtn">Reset</button>
       </div>
     </main>
 

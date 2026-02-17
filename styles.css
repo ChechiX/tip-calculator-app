@@ -24,7 +24,7 @@
   line-height: 1.5;
 }
 
-.result__title, .people-group__label, .fieldset__legend, .bill-group__label {
+.result__title, .people-group__error, .people-group__label, .fieldset__legend, .bill-group__label {
   font-family: "Space Mono Bold";
   font-size: 1rem;
   line-height: 1.5;
@@ -152,6 +152,18 @@ body {
   left: 18.37px;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -webkit-appearance: textfield;
+          appearance: textfield;
+  -moz-appearance: textfield;
+}
+
 .bill-amount__input {
   padding: 0.5rem 1rem;
   color: #00474b;
@@ -160,6 +172,7 @@ body {
   border: none;
   text-align: end;
   min-width: 0;
+  cursor: pointer;
 }
 @media (min-width: 48rem) {
   .bill-amount__input {
@@ -207,6 +220,7 @@ body {
   border: none;
   background-color: #00474b;
   border-radius: 0.3125rem;
+  cursor: pointer;
 }
 
 .tip-options__button:hover {
@@ -224,6 +238,12 @@ body {
   background-color: #f3f9fa;
   text-align: center;
   border-radius: 0.3125rem;
+  color: #00474b;
+  cursor: pointer;
+}
+
+.tip-options__input:focus {
+  outline: 2px solid #26c2ae;
 }
 
 .tip-options__input::-moz-placeholder {
@@ -232,10 +252,6 @@ body {
 
 .tip-options__input::placeholder {
   color: #547878;
-}
-
-.tip-options__input:focus {
-  outline: none;
 }
 
 .people-group {
@@ -248,6 +264,20 @@ body {
   .people-group {
     margin: 0;
   }
+}
+
+.people-group__text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.people-group__error {
+  color: #e17052;
+  display: none;
+}
+
+.people-group__error--active {
+  display: block;
 }
 
 .people-container {
@@ -278,6 +308,10 @@ body {
 
 .people-container__input:focus {
   outline: 2px solid #26c2ae;
+}
+
+.people-container__input--error:focus {
+  outline: 2px solid #e17052;
 }
 
 .results-group {
@@ -349,6 +383,7 @@ body {
   background-color: #26c2ae;
   border: none;
   border-radius: 0.3125rem;
+  cursor: pointer;
 }
 @media (min-width: 48rem) {
   .results-group__reset-btn {
@@ -358,6 +393,12 @@ body {
 
 .results-group__reset-btn:hover {
   background-color: #9fe8df;
+}
+
+.results-group__reset-btn:disabled {
+  background-color: #0d686d;
+  color: #085c61;
+  cursor: not-allowed;
 }
 
 .attribution {

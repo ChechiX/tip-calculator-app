@@ -174,6 +174,17 @@ body {
   left: 18.37px;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
 .bill-amount__input {
   @extend %text-preset-3;
   padding: 0.5rem 1rem;
@@ -183,6 +194,7 @@ body {
   border: none;
   text-align: end;
   min-width: 0;
+  cursor: pointer;
 
   @media (min-width: 48rem) {
     width: 100%;
@@ -229,6 +241,7 @@ body {
   border: none;
   background-color: $green-900;
   border-radius: 0.3125rem;
+  cursor: pointer;
 }
 
 .tip-options__button:hover {
@@ -247,15 +260,16 @@ body {
   background-color: $grey-50;
   text-align: center;
   border-radius: 0.3125rem;
-  // color: $white;
+  color: $green-900;
+  cursor: pointer;
+}
+
+.tip-options__input:focus {
+  outline: 2px solid $green-400;
 }
 
 .tip-options__input::placeholder {
   color: $grey-550;
-}
-
-.tip-options__input:focus {
-  outline: none;
 }
 
 .people-group {
@@ -269,8 +283,23 @@ body {
   }
 }
 
+.people-group__text {
+  display: flex;
+  justify-content: space-between;
+}
+
 .people-group__label {
   @extend %text-preset-5;
+}
+
+.people-group__error {
+  @extend %text-preset-5;
+  color: $orange-400;
+  display: none;
+}
+
+.people-group__error--active {
+  display: block;
 }
 
 .people-container {
@@ -283,8 +312,6 @@ body {
   position: absolute;
   left: 17px;
 }
-
-// TODO: Revisar si queda mejor con outline o solo mostrar el mensaje de error
 
 .people-container__input {
   @extend %text-preset-3;
@@ -303,6 +330,10 @@ body {
 
 .people-container__input:focus {
   outline: 2px solid $green-400;
+}
+
+.people-container__input--error:focus {
+  outline: 2px solid $orange-400;
 }
 
 .results-group {
@@ -374,6 +405,7 @@ body {
   background-color: $green-400;
   border: none;
   border-radius: 0.3125rem;
+  cursor: pointer;
 
   @media (min-width: 48rem) {
     padding: 0.5rem 3rem;
@@ -382,6 +414,12 @@ body {
 
 .results-group__reset-btn:hover {
   background-color: $green-200;
+}
+
+.results-group__reset-btn:disabled {
+  background-color: $green-750;
+  color: $green-800;
+  cursor: not-allowed;
 }
 
 .attribution {
